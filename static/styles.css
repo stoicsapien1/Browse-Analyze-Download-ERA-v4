@@ -1,0 +1,38 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #22c55e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: var(--bg); color: var(--text);
+}
+
+header, footer { text-align: center; padding: 16px 12px; }
+header h1 { margin: 0; font-weight: 700; }
+footer { color: var(--muted); font-size: 14px; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 16px; display: grid; gap: 16px; }
+
+.card { background: var(--card); border: 1px solid #1f2937; border-radius: 12px; padding: 16px; }
+.card h2 { margin-top: 0; }
+
+input[type="file"] { color: var(--muted); }
+button { background: var(--accent); color: #052e16; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+button:hover { filter: brightness(1.05); }
+
+.flash { background: #1f2937; border-left: 4px solid #ef4444; padding: 8px 12px; border-radius: 8px; }
+
+.table-wrapper { overflow: auto; max-height: 420px; border: 1px solid #1f2937; border-radius: 8px; }
+table.dataframe { width: 100%; border-collapse: collapse; }
+table.dataframe th, table.dataframe td { border-bottom: 1px solid #1f2937; padding: 8px 10px; text-align: left; }
+table.dataframe th { position: sticky; top: 0; background: #0b1220; }
+
+iframe { width: 100%; height: 70vh; border: 1px solid #1f2937; border-radius: 8px; }
+
+

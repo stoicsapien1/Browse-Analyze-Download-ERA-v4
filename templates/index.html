@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="card">
+  <h2>Upload a dataset</h2>
+  <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+    <input type="file" name="dataset" accept=".csv,.xlsx,.xls" required>
+    <button type="submit">Upload</button>
+  </form>
+</section>
+
+{% if preview_html %}
+<section class="card">
+  <h2>Preview (first 10 rows)</h2>
+  <div class="table-wrapper">
+    {{ preview_html|safe }}
+  </div>
+  <form action="{{ url_for('generate') }}" method="post">
+    <input type="hidden" name="stored_filename" value="{{ stored_filename }}">
+    <button type="submit">Generate EDA</button>
+  </form>
+</section>
+{% endif %}
+
+{% if report_url %}
+<section class="card">
+  <h2>EDA Report</h2>
+  <p><a href="{{ report_url }}" target="_blank" rel="noopener">Open report in new tab</a></p>
+  <iframe src="{{ report_url }}" title="EDA Report" loading="lazy"></iframe>
+{% endif %}
+
+{% endblock %}
+
+
